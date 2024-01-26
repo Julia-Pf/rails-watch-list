@@ -1,6 +1,6 @@
 
 <div class="card text-center bg-dark text-white">
-  <img class="card-img img-fluid height: 50%" src="https://images.unsplash.com/photo-1682686578842-00ba49b0a71a?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image">
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill, class: "card-img img-fluid"%>
   <div class="card-img-bottom">
     <h2 class="card-title p-3"><%= @list.name %></h2>
   </div>
@@ -11,7 +11,8 @@
   <div class="row justify-content-center ">
     <% @list.bookmarks.each do |bookmark| %>
     <div class="card m-3" style="width: 25rem;">
-      <img class="card-img-top" src="https://images.unsplash.com/photo-1682686578842-00ba49b0a71a?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image cap">
+      <img class="card-img-top" <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>>
+
         <div class="card-body">
           <h3 class="card-title"><%= bookmark.movie.title %></h3>
         <p class="card-text"><%= bookmark.comment %></p>
